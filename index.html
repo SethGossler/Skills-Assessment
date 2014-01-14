@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Skills Assessment</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <script type="text/x-handlebars">
+      <div class="contacts-viewer">
+        <header class="menu-bar">
+          <h1>Contacts</h1>
+        </header>
+        <div class="contacts-list">
+        {{outlet}}
+        </div>
+        <footer class="footer-bar">
+          <select  {{action 'change' on="change" target="view"}}>
+            <option value="email">Email address</option>
+            <option value="phone">Phone number</option>
+          </select>
+        </footer>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" id="email">
+      {{#each contact in model}}
+        <div class="contact {{zebra}}" {{action 'click' on="click" target="view"}}>
+          <span class="name-status">
+            <span class="status {{unbound contact.status}}"></span>
+            <span class="name">{{contact.name}}</span>
+          </span>
+          <span class="info">
+            <span class="email">{{contact.email}}</span>
+            <span class="details">
+              <a href="mailto:{{unbound contact.email}}" class="email">{{contact.email}}</a>
+              <a href="tel:{{unbound contact.phone}}" class="phone">{{contact.phone}}</a>
+              <span class="address">{{contact.street}}</span>
+              <span class="addressTwo">{{contact.city}}</span>
+            </span>
+          </span>
+        </div>   
+      {{/each}} 
+    </script>
+
+    <script type="text/x-handlebars" id="phone">
+      {{#each contact in model}}
+        <div class="contact {{zebra}}" {{action 'click' on="click" target="view"}}>
+          <span class="name-status">
+            <span class="status {{unbound contact.status}}"></span>
+            <span class="name">{{contact.name}}</span>
+          </span>
+          <span class="info">
+            <span class="phone">{{contact.phone}}</span>
+            <span class="details">
+              <a href="mailto:{{unbound contact.email}}" class="email">{{contact.email}}</a>
+              <a href="tel:{{unbound contact.phone}}" class="phone">{{contact.phone}}</a>
+              <span class="address">{{contact.street}}</span>
+              <span class="addressTwo">{{contact.city}}</span>
+            </span>
+          </span>
+        </div>   
+      {{/each}} 
+    </script>
+
+    <script src="js/libs/jquery-1.10.2.js"></script>
+    <script src="js/libs/handlebars-1.1.2.js"></script>
+    <script src="js/libs/ember-1.3.0.js"></script>
+    <script src="js/app.js"></script>
+
+  </body>
+</html>

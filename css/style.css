@@ -1,0 +1,151 @@
+body {
+	margin: 0;
+	text-align: center;
+	margin-top: 2em;
+}
+
+/*contacts-viewer object*/
+.contacts-viewer {
+	text-align: left;
+
+	width: 300px;
+	color: #fff;
+	display: inline-block;
+
+	box-shadow: 0px 8px 8px #666;
+	border-radius: .5em;
+}
+
+/*
+* Menu Bar
+*/
+.menu-bar {
+	border-top-left-radius:.5em;
+	border-top-right-radius:.5em;
+	padding: .75em;
+
+	/*Note: I used a gradient CSS Generator*/
+	background: #3f3f3f; /* Old browsers */
+	background: -moz-linear-gradient(top,  #3f3f3f 11%, #2b2b2b 75%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(11%,#3f3f3f), color-stop(75%,#2b2b2b)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #3f3f3f 11%,#2b2b2b 75%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #3f3f3f 11%,#2b2b2b 75%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #3f3f3f 11%,#2b2b2b 75%); /* IE10+ */
+	background: linear-gradient(to bottom,  #3f3f3f 11%,#2b2b2b 75%); /* W3C */
+
+
+}
+.menu-bar h1 {
+	font-size: 1em;
+	margin: 0;
+
+}
+/*
+* Contacts List 
+*/
+.contacts-list {
+	font-size: .8em;
+	background: #050505;
+}
+.contacts-list .contact {
+	background: #212121;
+	line-height: 3em;
+	vertical-align: middle;
+	border: 1px solid #111;
+}
+.contacts-list .contact:hover {
+	cursor: pointer;
+}
+.contacts-list .contact.dark {
+	background: #191919;
+}
+.contacts-list .contact.active,
+.contacts-list .contact.dark.active {
+	background: #484848;
+}
+.contacts-list .contact.fade {
+	opacity: .25;
+}
+.contact .name-status {
+	display: inline-block;
+	width: 105px;/*105/270*/
+	border-right: 1px solid #111;
+}
+.contact .info {
+	display: inline-block;
+	position: relative;
+	color:#666;
+	width: 160px;
+	margin-left: 1em;
+}
+/*hover details*/
+.contact.active .info .details {
+	display: block
+}
+.contact .info .details {
+	display: none;
+
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: -21px;
+	line-height: 1em;
+
+	width: 172px;
+	padding-left: 22px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+
+	color: #fff;
+	background: #484848;
+}
+.contact .info .details a.email {
+	color: #13c7ce;
+	text-decoration: none;
+	padding-bottom: 1px;
+	border-bottom: 1px solid #13c7ce;
+}
+.contact .info .details a.phone {
+	color: #fff;
+	text-decoration: none;
+	line-height: 3em;
+}
+.contact .info .details span.address,
+.contact .info .details span.addressTwo {
+	display: block;
+	line-height: 1.25em;
+}
+/*status*/
+.contact .status {
+	display: inline-block;
+	width: .75em;
+	height: .75em;
+	border-radius: 1em;
+	margin: .75em;
+	margin-top: 0;
+	margin-bottom: 0;
+	background: #333;
+}
+.contact .status.busy {
+	background: #f00;
+}
+.contact .status.online {
+	background: #00da1a;
+}
+.contact .status.away {
+	background: #fffc00;
+}
+
+/*
+* Footer Bar
+*/
+.footer-bar {
+	background: #2b2b2b;
+	border-bottom-left-radius:.5em;
+	border-bottom-right-radius:.5em;
+	text-align: right;
+	padding: .75em;
+}
+.footer-bar select {
+
+}
